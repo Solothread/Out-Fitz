@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="555192394580-2rv53rke472lem5tetsf67e5m6eoiskn.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="555192394580-injul9m0e2cadb0desisn7s6et5i3cqn.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="utf-8">
     <title>Out-Fitz</title>
@@ -27,8 +27,10 @@
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
+    window.location.replace("http://out-fitz.appspot.com/home");
   };
 </script>
+
 
     <h1 id="Welcome"> Welcome to Out-Fitz!</h1>
     <p id="CrtAccBtn" class="w3-button w3-round-xxlarge w3-indigo w3-border-white w3-border"> Create Account </p>

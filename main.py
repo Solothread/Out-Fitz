@@ -18,8 +18,13 @@ class InfoPage(webapp2.RequestHandler):
 
 class HomePage(webapp2.RequestHandler):
         def get(self):
+
+            dateInfo = {
+                "month": datetime.datetime.now().strftime("%A, %B %d, %Y")
+            }
+
             home = jinja_env.get_template('templates/home.html')
-            self.response.write(home.render())
+            self.response.write(home.render(dateInfo))
 
 app = webapp2.WSGIApplication([
     ('/', InfoPage),

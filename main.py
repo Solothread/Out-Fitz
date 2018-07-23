@@ -13,8 +13,18 @@ jinja_env = jinja2.Environment(
 
 class InfoPage(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        variables = {}
+        if user:
+            nickname = user.nickname()
+            logout_url = users.create_logout_url('/')
+            variables ["log_url"] = logout_url
+        else:
+            login_url = users.create_login_url('/')
+            variables ["log_url"] = login_url
+
         info = jinja_env.get_template('templates/info.html')
-        self.response.write(info.render())
+        self.response.write(info.render(variables))
 
 class HomePage(webapp2.RequestHandler):
         def get(self):

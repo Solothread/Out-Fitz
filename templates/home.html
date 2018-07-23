@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="555192394580-injul9m0e2cadb0desisn7s6et5i3cqn.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script>
     $( function() {
       $( "#datepicker" ).datepicker();
@@ -18,7 +21,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
+<<<<<<< HEAD
     <div id="todaysDateText">{{month}}</div>
+=======
+    <!-- Sign Out -->
+    <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
+  </script>
+  <a href="/" onclick="signOut();">Sign out</a>
+
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <!-- Sign Out End -->
+
+    <div id="todaysDateText">Monday, July 23 2018</div>
+>>>>>>> e225afacf2bcbb42de66bdf609058c84eea22777
     <p id="datePickerContainer">Date: <input type="text" id="datepicker"></p>
   </body>
 </html>

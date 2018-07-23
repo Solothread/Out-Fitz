@@ -1,0 +1,14 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#todaysDateText {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+#datePickerContainer {
+  padding-top: 30px;
+  padding-left: 8px;
+}

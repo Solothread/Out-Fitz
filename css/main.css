@@ -1,0 +1,23 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-color: black;
+}
+
+#Welcome {
+  margin-top: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+#CrtAccBtn {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-left: 25%
+}
+
+#loginbtn {
+  display: flex;
+  justify-content: center;
+}

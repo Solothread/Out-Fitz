@@ -6,6 +6,7 @@ import urllib
 import urllib2
 import datetime
 from google.appengine.ext import ndb
+from google.appengine.api import users
 
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))

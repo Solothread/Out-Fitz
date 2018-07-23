@@ -29,6 +29,12 @@ body {
 }
 
 h2 {
+  padding-top: 15px;
   display: flex;
   justify-content: center;
+}
+
+#description {
+  margin-left: 15%;
+  font-size: 17px;
 }

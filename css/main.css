@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  color: black;
+  color: white;
   background-color: #3f51b5;
 }
 
@@ -10,8 +10,15 @@ body {
   height: 40px;
 }
 
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
 #Welcome {
-  margin-top: 25%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
 }
@@ -20,6 +27,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+  width: 15%;
 }
 
 #bottominfo {
@@ -40,6 +49,17 @@ h2 {
 }
 
 #description {
-  margin-left: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   font-size: 17px;
+  padding-bottom: 50px;
 }
+.bottombar {
+  height: 70px;
+  background-color: #424242;
+  width: 100%;
+}
+
+.slowfade{animation:opac 2s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.slowerfade{animation:opac 3s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.slowanimatetop{position:relative;animation:animatetop 1s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}

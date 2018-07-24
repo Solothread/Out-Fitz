@@ -48,7 +48,7 @@ class InfoPage(webapp2.RequestHandler):
                 'month': datetime.datetime.now().strftime("%A, %B %d, %Y")
             }
             self.response.write(userhome.render(jinja_values))
-            
+
 app = webapp2.WSGIApplication([
     ('/', InfoPage),
 ])

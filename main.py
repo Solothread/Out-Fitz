@@ -11,6 +11,11 @@ from google.appengine.api import users
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
+class Login(ndb.Model):
+    login_url = ndb.StringProperty(required=True)
+    email = ndb.StringProperty(required=True)
+    nickname = ndb.StringProperty(required=True)
+
 class InfoPage(webapp2.RequestHandler):
     def get(self):
         info = jinja_env.get_template('templates/info.html')

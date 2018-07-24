@@ -17,7 +17,7 @@ class InfoPage(webapp2.RequestHandler):
         variables = {}
         if user:
             nickname = user.nickname()
-            logout_url = users.create_logout_url('/')
+            logout_url = users.create_logout_url('/home')
             variables ["log_url"] = logout_url
         else:
             login_url = users.create_login_url('/')

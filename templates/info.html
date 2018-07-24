@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="555192394580-injul9m0e2cadb0desisn7s6et5i3cqn.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="utf-8">
     <title>Out-Fitz</title>
     <link rel="stylesheet" href="/css/main.css">
@@ -11,40 +8,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-<script>
-  function onSignIn(googleUser) {
-    // Useful data for your client-side scripts:
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-
-    // The ID token you need to pass to your backend:
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
-    window.location.replace("http://out-fitz.appspot.com/home");
-  };
-</script>
-
-
+    <div class="topbar w3-card"></div>
     <h1 id="Welcome"> Welcome to Out-Fitz!</h1>
-    <p id="CrtAccBtn" class="w3-button w3-round-xxlarge w3-indigo w3-border-white w3-border"> Create Account </p>
-    <p id="loginbtn"> Log In </p>
-    <section id="bottominfo">
-      <h2>About Out-Fitz</h2>
-      <br>
-      <div id="description">
-        <p>Out-Fitz will help you diversify your wardrobe and style, never question if you have already worn an outfit again!
-        <p>With Out-Fitz you can upload a picture of your outfit daily along with a date & time tag and a description of what you wore to keep track of what you wear every day.
-        <p> When you are deciding what to wear you can scroll through all of your previous outfits to ensure that you do not repeat!
-        <p> Byte Size: Adam, Isaac and Nikki, created the application with the intent of eliminating the factor of forgetfulness
-            when picking what to wear
-      </div>
+    <a href="{{log_url}}">
+    <img id="signinbtn" src="/images/btn_google_signin_light_normal_web@2x.png"></img>
+    </a>
+    <br>
+    <div class="topbar2"></div>
+    <section id="infoarea">
+      <div class="sidebar"></div>
+      <section id="bottominfo" class="w3-card">
+        <h2>About Out-Fitz</h2>
+        <br>
+        <div id="description">
+          <p>Out-Fitz will help you diversify your wardrobe and style, never question if you have already worn an outfit again!
+          <p>With Out-Fitz you can upload a picture of your outfit daily along with a date & time tag and a description of what you wore to keep track of what you wear every day.
+          <p> When you are deciding what to wear you can scroll through all of your previous outfits to ensure that you do not repeat!
+          <p> Byte Size: Adam, Isaac and Nikki, created the application with the intent of eliminating the factor of forgetfulness
+              when picking what to wear
+        </div>
+      </section>
+      <div class="sidebar"></div>
+
     </section>
+    <div class="topbar2"></div>
+    <div class="topbar w3-card"></div>
   </body>
 </html>

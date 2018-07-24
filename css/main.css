@@ -1,7 +1,19 @@
 body {
   font-family: 'Roboto', sans-serif;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
+}
+
+.topbar {
+  background-color: #3f51b5;
+  width: 100%;
+  height: 40px;
+}
+
+.topbar2 {
+  background-color: #f2f2f4;
+  width: 100%;
+  height: 40px;
 }
 
 #Welcome {
@@ -10,28 +22,32 @@ body {
   justify-content: center;
 }
 
-#CrtAccBtn {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  margin-left: 25%
-}
-
-#loginbtn {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20%;
+#signinbtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #bottominfo {
   color: black;
   background-color: white;
+  width: 70%;
+}
+#infoarea {
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
   padding-top: 15px;
   display: flex;
   justify-content: center;
+}
+
+.sidebar {
+  width: 15%;
+  height: auto;
+  background-color: #f2f2f4;
 }
 
 #description {

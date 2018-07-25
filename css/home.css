@@ -8,6 +8,14 @@ body {
   top: 16px;
   left: 16px;
 }
+#photoLinkContainer {
+  padding-top: 30px;
+  padding-left: 8px;
+}
+#descriptionContainer{
+  padding-top: 30px;
+  padding-left: 8px;
+}
 
 #datePickerContainer {
   padding-top: 30px;

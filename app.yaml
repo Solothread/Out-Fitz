@@ -2,6 +2,7 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+
 handlers:
 - url: /css
   static_dir: css
@@ -14,9 +15,10 @@ handlers:
 
 - url: /node_modules
   static_dir: node_modules
-  
+
 - url: /.*
   script: main.app
+
 
 libraries:
 - name: jinja2

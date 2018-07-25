@@ -28,7 +28,13 @@
       <h1>RESULTS TEST</h1>
       <p>Date: {{datepicker}}</p>
       <p>Label: {{outfitdescription}}</p>
-      <p>Link: {{link}}</p>
+      <p>
+        Your photo: <img src="data:image/jpg;base64,{{img}}">
+      </p>
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="myfile"/>
+        <button>Submit</button>
+      </form>
       <form class="description" method="POST">
         <div id="photoLinkContainer">Photo Link: <input name="link"></div>
         <div id="descriptionContainer">Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription" > </input> </div>

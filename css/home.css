@@ -29,3 +29,8 @@ body {
 #pictimeline {
   margin-left: 35%;
 }
+
+#photoLinkContainer {
+  padding-top: 30px;
+  padding-left: 8px;
+}

@@ -17,6 +17,11 @@ class Login(ndb.Model):
     email = ndb.StringProperty(required=True)
     nickname = ndb.StringProperty(required=True)
 
+class Entry(ndb.Model):
+    date = ndb.StringProperty(required=True)
+    label = ndb.StringProperty(required=True)
+    link = ndb.StringProperty(required=True)
+
 class InfoPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -48,6 +53,24 @@ class InfoPage(webapp2.RequestHandler):
                 'month': datetime.datetime.now().strftime("%A, %B %d, %Y")
             }
             self.response.write(userhome.render(jinja_values))
+
+    def post(self):
+        entriesTemplate = jinja_env.get_template("home.html")
+        user_date = self.request.get("date")
+        user_label = self.request.get("label")
+        user_link = self.request.get("link")
+
+        entryObject = Entry(date=user_date, label=user_label, link=user_link)
+        entryObject.put()
+
+        user_input = {
+            "date": user_date,
+            "label": user_label,
+            "link": User_link,
+        }
+
+        self.response.write(entriesTemplate.render(user_input))
+
 
 app = webapp2.WSGIApplication([
     ('/', InfoPage),

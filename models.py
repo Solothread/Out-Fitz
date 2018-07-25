@@ -7,6 +7,7 @@ class Visitor(ndb.Model):
     image = ndb.BlobProperty()
 
 class Outfit(ndb.Model):
-    outfitdef = ndb.StringProperty(required=False)
-    datepick = ndb.StringProperty()
-    link = ndb.StringProperty(required=True)
+    Description = ndb.StringProperty(required=False)
+    Date = ndb.StringProperty()
+    Image = ndb.StringProperty(required=False)
+    User_ID = ndb.StringProperty()

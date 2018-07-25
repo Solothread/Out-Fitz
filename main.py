@@ -73,9 +73,10 @@ class InfoPage(webapp2.RequestHandler):
         pic_link = self.request.get("link")
 
         my_outfit = Outfit(
-            outfitdef = outfit_description,
-            datepick = date_picker,
-            link = pic_link)
+            Description = outfit_description,
+            Date = date_picker,
+            Image = pic_link,
+            User_ID = user.user_id())
         my_outfit.put()
 
         self.redirect('/')

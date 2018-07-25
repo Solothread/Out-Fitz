@@ -20,13 +20,15 @@
   <body>
     <section id="leftbar" class="w3-card">
       <br>
-      <div id="todaysDateText" class="w3-card">{{month}}</div>
+      <h1 id="todaysDateText">{{month}}</h1>
       <p id="helloNameText">Hello, {{name}}!</p>
-      <a href="{{log_url}}"><p id="signOutButton"> Sign Out </p></a>
+      <div id="signOutButton"><a href="{{log_url}}"><p> Sign Out </p></a></div>
       <form class="description" enctype="multipart/form-data" method="POST">
         <input type="file" name="myfile"/>
-        <div id="descriptionContainer">Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription" > </input> </div>
-        <div id="datePickerContainer">Enter the date you wore this Outfit: <input type="text" id="datepicker" name="datepicker"></div>
+        <div id="entryInfoContainer">
+          Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription"></input> <br>
+          Enter the date you wore this Outfit: <input type="text" id="datepicker" name="datepicker"></input>
+        </div>
       <button type="submit"> Enter your outfit </button>
     </section>
     <section id="pictimeline"> <!-- Where all the pictures should display -->

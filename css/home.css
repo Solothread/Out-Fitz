@@ -8,18 +8,27 @@ body {
   top: 16px;
   left: 16px;
 }
+
+#helloNameText{
+  padding-left: 16px;
+}
+
+#signOutButton {
+  padding-left: 16px;
+}
+
 #photoLinkContainer {
   padding-top: 30px;
-  padding-left: 8px;
+  padding-left: 16px;
 }
 #descriptionContainer{
   padding-top: 30px;
-  padding-left: 8px;
+  padding-left: 16px;
 }
 
 #datePickerContainer {
   padding-top: 30px;
-  padding-left: 8px;
+  padding-left: 16px;
 }
 
 #leftbar {

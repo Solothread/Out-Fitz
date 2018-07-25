@@ -20,21 +20,9 @@
   <body>
     <section id="leftbar" class="w3-card">
       <br>
-      <p> Hello, {{name}}!
-      <p> Email: {{email_addr}}
-      <p> User_id: {{user_id}}
-      <a href="{{log_url}}"><p> Sign Out </p></a>
       <div id="todaysDateText" class="w3-card">{{month}}</div>
-      <h1>RESULTS TEST</h1>
-      <p>Date: {{datepicker}}</p>
-      <p>Label: {{outfitdescription}}</p>
-      <!-- <p>
-        Your photo: <img src="data:image/jpg;base64,{{img}}">
-      </p>
-      <form method="post" enctype="multipart/form-data">
-        <input type="file" name="myfile"/>
-        <button>Submit</button>
-      </form> -->
+      <p id="helloNameText">Hello, {{name}}!</p>
+      <a href="{{log_url}}"><p id="signOutButton"> Sign Out </p></a>
       <form class="description" enctype="multipart/form-data" method="POST">
         <input type="file" name="myfile"/>
         <div id="descriptionContainer">Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription" > </input> </div>

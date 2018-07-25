@@ -22,20 +22,24 @@ body {
 }
 
 #Welcome {
-  margin-top: 5%;
   display: flex;
   justify-content: center;
 }
 
 #downarrow {
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  padding-bottom: 5%;
+  padding-top: 5%
 }
 
 #signinbtn {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   width: 200px;
 }
 
@@ -68,6 +72,7 @@ h2 {
   width: 100%;
 }
 
+.animatefading{animation:fading 3s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 .slowfade{animation:opac 2s}@keyframes opac{from{opacity:0} to{opacity:1}}
 .slowerfade{animation:opac 3s}@keyframes opac{from{opacity:0} to{opacity:1}}
 .slowanimatetop{position:relative;animation:animatetop 1s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}

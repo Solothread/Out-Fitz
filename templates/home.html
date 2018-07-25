@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/css/w3.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -17,13 +18,17 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <br>
-    <p> Hello, {{name}}!
-    <p> Your email is {{email_addr}}
-    <p> Your User_id is {{user_id}}
-    <a href="{{log_url}}"><p> Sign Out </p></a>
-    <div id="todaysDateText">Monday, July 23 2018</div>
-    <p id="datePickerContainer">Date: <input type="text" id="datepicker"></p>
-    <div> Add a desciption:   <input = description>  </div>
-    
+    <section id="leftbar" class="w3-card">
+      <br>
+      <p> Hello, {{name}}!
+      <p> Email: {{email_addr}}
+      <p> User_id: {{user_id}}
+      <a href="{{log_url}}"><p> Sign Out </p></a>
+      <div id="todaysDateText" class="w3-card">Tuesday, July 24 2018</div>
+      <p id="datePickerContainer">Date: <input type="text" id="datepicker"></p>
+      <div> Add a desciption:   <input = description>  </div>
+    </section>
+    <section id="pictimeline"> <!-- Where all the pictures should display -->
+      <p>Content goes here...
+    </section>
 </html>

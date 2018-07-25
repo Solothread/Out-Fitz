@@ -61,6 +61,7 @@ class InfoPage(webapp2.RequestHandler):
             self.response.write(userhome.render(jinja_values))
 
     def post(self):
+        user = users.get_current_user()
         my_visitor = get_visitor()
 
         if my_visitor:
@@ -79,9 +80,8 @@ class InfoPage(webapp2.RequestHandler):
             User_ID = user.user_id())
         my_outfit.put()
 
-        self.redirect('/')
+        # self.redirect('/')
 
-"""
         jinja_values = {
             'name': user.nickname(),
             'email_addr': user.email(),
@@ -95,7 +95,6 @@ class InfoPage(webapp2.RequestHandler):
 
         entriesTemplate = jinja_env.get_template("/templates/home.html")
         self.response.write(entriesTemplate.render(jinja_values))
-"""
 
 app = webapp2.WSGIApplication([
     ('/', InfoPage),

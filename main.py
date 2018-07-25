@@ -76,10 +76,10 @@ class InfoPage(webapp2.RequestHandler):
         user = users.get_current_user()
         my_visitor = get_visitor()
 
-        if my_visitor:
-            img = self.request.get("myfile")
-            my_visitor.image = img
-            my_visitor.put()
+        # if my_visitor:
+        img = self.request.get("myfile")
+        visitorimage = img
+        # my_visitor.put()
 
         outfit_description = self.request.get("outfitdescription")
         date_picker = self.request.get("datepicker")
@@ -88,7 +88,7 @@ class InfoPage(webapp2.RequestHandler):
         my_outfit = Outfit(
             Description = outfit_description,
             Date = date_picker,
-            Image = my_visitor.image,
+            Image = visitorimage,
             User_ID = user.user_id())
         my_outfit.put()
 
@@ -105,8 +105,8 @@ class InfoPage(webapp2.RequestHandler):
             "link": pic_link,
         }
 
-        if my_visitor.image:
-            jinja_values["img"] = base64.b64encode(my_visitor.image)
+        if visitorimage:
+            jinja_values["img"] = base64.b64encode(visitorimage)
 
         entriesTemplate = jinja_env.get_template("/templates/home.html")
         self.response.write(entriesTemplate.render(jinja_values))

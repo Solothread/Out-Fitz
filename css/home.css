@@ -35,10 +35,37 @@ body {
 }
 
 #pictimeline {
-  margin-left: 35%;
+  margin-left: 32%;
 }
 
 #photoLinkContainer {
   padding-top: 30px;
   padding-left: 8px;
+}
+
+.timelinedate {
+  color: #7c7c7c;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    width: 97%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.timelineimage {
+  width: 50%;
+}
+
+.img_and_desc {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.timelinedesc {
+  padding-left: 10px;
 }

@@ -3,23 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Out-Fitz</title>
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+    <script src="node_modules/aos/dist/aos.js"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <div class="topbar w3-card"></div>
-    <h1 id="Welcome"> Welcome to Out-Fitz!</h1>
-    <a href="{{log_url}}">
-    <img id="signinbtn" src="/images/btn_google_signin_light_normal_web@2x.png"></img>
-    </a>
+    <script>
+    AOS.init();
+    </script>
+    <section id="tophalf" class="w3-card">
+      <img id="logo" class="slowanimatetop" src="/images/logo.png"></img>
+      <h1 id="Welcome" class='slowfade'> Welcome to Out-Fitz!</h1>
+      <a href="{{log_url}}">
+      <img id="signinbtn" class="slowerfade" src="/images/btn_google_signin_light_normal_web@2x.png"></img>
+      </a>
+      <img class="animatefading" id="downarrow" src="/images/baseline_arrow_downward_black_48dp.png"></img>
+    </section>
     <br>
     <div class="topbar2"></div>
     <section id="infoarea">
-      <section id="bottominfo" class="w3-card">
+      <section data-aos="fade-up" id="bottominfo" class="w3-card">
         <h2>About Out-Fitz</h2>
         <br>
-        <div id="description">
+        <div data-aos="fade-up" id="description">
           <p>Out-Fitz will help you diversify your wardrobe and style, never question if you have already worn an outfit again!
           <p>With Out-Fitz you can upload a picture of your outfit daily along with a date & time tag and a description of what you wore to keep track of what you wear every day.
           <p> When you are deciding what to wear you can scroll through all of your previous outfits to ensure that you do not repeat!
@@ -31,6 +39,6 @@
 
     </section>
     <div class="topbar2"></div>
-    <div class="topbar w3-card"></div>
+    <div class="bottombar"></div>
   </body>
 </html>

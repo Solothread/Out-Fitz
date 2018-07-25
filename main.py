@@ -77,6 +77,7 @@ class InfoPage(webapp2.RequestHandler):
             Description = outfit_description,
             Date = date_picker,
             Image = pic_link,
+            imageTEST = my_visitor.image,
             User_ID = user.user_id())
         my_outfit.put()
 
@@ -90,8 +91,11 @@ class InfoPage(webapp2.RequestHandler):
             'month': datetime.datetime.now().strftime("%A, %B %d, %Y"),
             "outfitdescription": outfit_description,
             "datepicker": date_picker,
-            "link": pic_link
+            "link": pic_link,
         }
+
+        if my_visitor.image:
+            jinja_values["img"] = base64.b64encode(my_visitor.image)
 
         entriesTemplate = jinja_env.get_template("/templates/home.html")
         self.response.write(entriesTemplate.render(jinja_values))

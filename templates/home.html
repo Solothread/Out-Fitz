@@ -28,15 +28,15 @@
       <h1>RESULTS TEST</h1>
       <p>Date: {{datepicker}}</p>
       <p>Label: {{outfitdescription}}</p>
-      <p>
+      <!-- <p>
         Your photo: <img src="data:image/jpg;base64,{{img}}">
       </p>
       <form method="post" enctype="multipart/form-data">
         <input type="file" name="myfile"/>
         <button>Submit</button>
-      </form>
-      <form class="description" method="POST">
-        <div id="photoLinkContainer">Photo Link: <input name="link"></div>
+      </form> -->
+      <form class="description" enctype="multipart/form-data" method="POST">
+        <input type="file" name="myfile"/>
         <div id="descriptionContainer">Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription" > </input> </div>
         <div id="datePickerContainer">Enter the date you wore this Outfit: <input type="text" id="datepicker" name="datepicker"></div>
       <button type="submit"> Enter your outfit </button>
@@ -45,7 +45,7 @@
       <p class="timelinedate"> {{datepicker}} </p>
       <hr/>
       <div class="img_and_desc">
-      <img class="timelineimage" src="{{link}}"></img>
+      <img class="timelineimage" src="data:image/jpg;base64,{{img}}"></img>
       <p class="timelinedesc"> {{outfitdescription}} </p>
       </div>
     </section>

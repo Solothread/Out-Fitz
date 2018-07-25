@@ -11,3 +11,4 @@ class Outfit(ndb.Model):
     Date = ndb.StringProperty(required=False)
     Image = ndb.StringProperty(required=False)
     User_ID = ndb.StringProperty()
+    imageTEST = ndb.BlobProperty()

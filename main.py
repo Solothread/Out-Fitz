@@ -40,13 +40,25 @@ class InfoPage(webapp2.RequestHandler):
             # if not: Create new entry in datastore for user
             if not my_visitor:
                 my_visitor = Visitor(
-                    key = my_key,
+                    #key = my_key,
                     id = user.user_id(),
                     name = user.nickname(),
                     email = user.email())
+
                 my_visitor.put()
 
             userhome = jinja_env.get_template('templates/home.html')
+
+            #Outfits query
+            #Need to add filter
+            query = Outfit.query()
+            outfitslist = query.fetch()
+            outfits = {
+                'outfits': outfitslist
+            }
+            print(outfits)
+            #Query end
+
             jinja_values = {
                 'name': user.nickname(),
                 'email_addr': user.email(),
@@ -55,8 +67,8 @@ class InfoPage(webapp2.RequestHandler):
                 'month': datetime.datetime.now().strftime("%A, %B %d, %Y")
             }
 
-            if my_visitor.image:
-                jinja_values["img"] = base64.b64encode(my_visitor.image)
+            # if my_visitor.image:
+            #     jinja_values["img"] = base64.b64encode(my_visitor.image)
 
             self.response.write(userhome.render(jinja_values))
 
@@ -76,8 +88,7 @@ class InfoPage(webapp2.RequestHandler):
         my_outfit = Outfit(
             Description = outfit_description,
             Date = date_picker,
-            Image = pic_link,
-            imageTEST = my_visitor.image,
+            Image = my_visitor.image,
             User_ID = user.user_id())
         my_outfit.put()
 

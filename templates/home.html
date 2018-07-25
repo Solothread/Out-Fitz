@@ -23,7 +23,12 @@
     <p> Your User_id is {{user_id}}
     <a href="{{log_url}}"><p> Sign Out </p></a>
     <div id="todaysDateText">Monday, July 23 2018</div>
-    <p id="datePickerContainer">Date: <input type="text" id="datepicker"></p>
-    <div> Add a desciption:   <input = description>  </div>
-    
+    <!-- <p id="datePickerContainer">Date: <input type="text" id="datepicker"></p> -->
+    <form class="description" method="POST">
+      <div>Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription" > </input> </div>
+      <div id="datePickerContainer">Enter the date you wore this Outfit: <input type="text" id="datepicker"></div>
+    <button type="submit"> Enter your outfit </button>
+    {%for word in string%}
+    <p> Your outfit on {{datepicker}} was {{outfitdescription}} </p>
+    {%endfor%}
 </html>

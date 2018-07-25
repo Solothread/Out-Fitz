@@ -16,6 +16,9 @@ class Login(ndb.Model):
     login_url = ndb.StringProperty(required=True)
     email = ndb.StringProperty(required=True)
     nickname = ndb.StringProperty(required=True)
+class Outfit(ndb.Model):
+    outfitdef = ndb.StringProperty(required=False)
+    datepick = ndb.StringProperty(required=True)
 
 class InfoPage(webapp2.RequestHandler):
     def get(self):
@@ -48,7 +51,27 @@ class InfoPage(webapp2.RequestHandler):
                 'month': datetime.datetime.now().strftime("%A, %B %d, %Y")
             }
             self.response.write(userhome.render(jinja_values))
-            
+    def post(self):
+
+        outfit_description = self.request.get("outfitdescription")
+        date_picker = self.request.get("datepicker")
+
+        my_outfit = Outfit(
+            outfitdef = outfit_description,
+            datepick = date_picker)
+        my_outfit.put()
+
+        jinja_value = {
+        "outfitdescription": outfit_description,
+        "datepicker": date_picker,
+                            }
+
+        returnback = jinja_env.get_template("/templates/home.html")
+        self.response.write(returnback.render(jinja_value))
+
+
+
+
 app = webapp2.WSGIApplication([
     ('/', InfoPage),
 ])

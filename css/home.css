@@ -5,28 +5,28 @@ body {
 
 #todaysDateText {
   position: absolute;
+  font-size: xx-large;
   top: 16px;
   left: 16px;
 }
 
 #helloNameText{
+  padding-top: 30px;
   padding-left: 16px;
 }
 
 #signOutButton {
-  padding-left: 16px;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
 }
 
 #photoLinkContainer {
   padding-top: 30px;
   padding-left: 16px;
 }
-#descriptionContainer{
-  padding-top: 30px;
-  padding-left: 16px;
-}
 
-#datePickerContainer {
+#entryInfoContainer {
   padding-top: 30px;
   padding-left: 16px;
 }

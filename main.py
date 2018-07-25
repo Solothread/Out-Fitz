@@ -56,7 +56,6 @@ class InfoPage(webapp2.RequestHandler):
             outfits = {
                 'outfits': outfitslist
             }
-            print(outfits)
             #Query end
 
             jinja_values = {

@@ -3,6 +3,10 @@ body {
   background-color: #f2f2f4;
 }
 
+::placeholder {
+  color: grey;
+}
+
 #todaysDateText {
   position: absolute;
   font-size: xx-large;
@@ -13,6 +17,11 @@ body {
 #topcard {
   background-color: #7e57c2;
   color: white;
+}
+
+#submitbtn {
+  margin-left: 20px;
+  background-color: #7e57c2;
 }
 
 #helloNameText{
@@ -34,7 +43,7 @@ body {
 }
 
 #outfitdescription {
-  padding-left: 10px;
+  padding-left: 20px;
   width: 200%;
 }
 #datepicker{
@@ -88,4 +97,8 @@ hr {
 
 .timelinedesc {
   padding-left: 10px;
+}
+
+#choosefile {
+  padding-bottom: 20px;
 }

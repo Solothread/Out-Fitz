@@ -35,7 +35,7 @@
       <a id="signOutButton" href="{{log_url}}" class="waves-effect waves-light btn"><i class="material-icons left">exit_to_app</i>Sign Out</a>
       <div class="row">
       <form class="description col s12" enctype="multipart/form-data" method="POST">
-        <input type="file" name="myfile"/>
+        <input id="choosefile" type="file" name="myfile"/>
         <div class="row" id="entryInfoContainer">
           <!-- Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription"></input> <br> -->
           <div class="input-field col s6">
@@ -48,16 +48,8 @@
           </div>
         </div>
         </div>
-      <button type="submit"> Enter your outfit </button>
-    </section>
-    <section id="pictimeline"> <!-- Where all the pictures should display -->
-      {% for n in outfits %}
-      <p class="timelinedate" data-aos="fade-down"> {{n.Date}} </p>
-      <hr/>
-      <div class="img_and_desc">
-      <img class="timelineimage" data-aos="fade-right" src="data:image/jpg;base64,{{img}}"></img>
-      <p class="timelinedesc" data-aos="fade-left"> {{n.Description}} </p>
-      </div>
-      {% endfor %}
-    </section>
+      <!-- <button type="submit"> Enter your outfit </button> -->
+      <button id="submitbtn" class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+      </button>
 </html>

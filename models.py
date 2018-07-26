@@ -9,5 +9,5 @@ class Visitor(ndb.Model):
 class Outfit(ndb.Model):
     Description = ndb.StringProperty(required=False)
     Date = ndb.StringProperty(required=False)
-    Image = ndb.BlobProperty()
+    Image = ndb.TextProperty()
     User_ID = ndb.StringProperty()

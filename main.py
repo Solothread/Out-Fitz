@@ -74,7 +74,7 @@ class InfoPage(webapp2.RequestHandler):
 
         # if my_visitor:
         img = self.request.get("myfile")
-        visitorimage = img
+        visitorimage = base64.b64encode(img)
         # my_visitor.put()
 
         outfit_description = self.request.get("outfitdescription")
@@ -88,25 +88,25 @@ class InfoPage(webapp2.RequestHandler):
             User_ID = user.user_id())
         my_outfit.put()
 
-        # self.redirect('/')
-        query = Outfit.query()
-        outfitslist = query.fetch()
-        jinja_values = {
-            'name': user.nickname(),
-            'email_addr': user.email(),
-            'user_id': user.user_id(),
-            'log_url': users.create_logout_url('/'),
-            'month': datetime.datetime.now().strftime("%A, %B %d, %Y"),
-            "outfitdescription": outfit_description,
-            "datepicker": date_picker,
-            'outfits': outfitslist
-        }
-
-        if visitorimage:
-            jinja_values["img"] = base64.b64encode(visitorimage)
-
-        entriesTemplate = jinja_env.get_template("/templates/home.html")
-        self.response.write(entriesTemplate.render(jinja_values))
+        self.redirect('/')
+        # query = Outfit.query()
+        # outfitslist = query.fetch()
+        # jinja_values = {
+        #     'name': user.nickname(),
+        #     'email_addr': user.email(),
+        #     'user_id': user.user_id(),
+        #     'log_url': users.create_logout_url('/'),
+        #     'month': datetime.datetime.now().strftime("%A, %B %d, %Y"),
+        #     "outfitdescription": outfit_description,
+        #     "datepicker": date_picker,
+        #     'outfits': outfitslist
+        # }
+        #
+        # if visitorimage:
+        #     jinja_values["img"] = base64.b64encode(visitorimage)
+        #
+        # entriesTemplate = jinja_env.get_template("/templates/home.html")
+        # self.response.write(entriesTemplate.render(jinja_values))
 
 app = webapp2.WSGIApplication([
     ('/', InfoPage),

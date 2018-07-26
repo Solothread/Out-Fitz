@@ -52,13 +52,14 @@
       <button id="submitbtn" class="btn waves-effect waves-light" type="submit" name="action">Submit
       <i class="material-icons right">send</i>
       </button>
+    </form>
     </section>
     <section id="pictimeline">
       {% for n in outfits %}
       <p class="timelinedate" data-aos='fade-down'> {{n.Date}} </p>
       <hr/>
       <div class="img_and_desc">
-      <img class="timelineimage" data-aos='fade-right' src='data:image/jpg;base64,{{img}}'></img>
+      <img class="timelineimage" data-aos='fade-right' src='data:image/jpg;base64, {{n.Image}}'></img>
       <p class="timelinedesc" data-aos='fade-left'> {{n.Description}} </p>
       </div>
       {% endfor %}

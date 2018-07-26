@@ -20,7 +20,7 @@ body {
 }
 
 #submitbtn {
-  margin-left: 20px;
+  margin-left: 16px;
   background-color: #7e57c2;
 }
 
@@ -44,7 +44,7 @@ body {
 
 #outfitdescription {
   padding-left: 20px;
-  width: 200%;
+  width: 175%;
 }
 #datepicker{
   width: 200%;

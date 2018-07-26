@@ -51,7 +51,7 @@ class InfoPage(webapp2.RequestHandler):
 
             #Outfits query
             #Need to add filter
-            query = Outfit.query(Outfit.User_ID == user.user_id())
+            query = Outfit.query(Outfit.User_ID == user.user_id()).order(-Outfit.Date)
             outfitslist = query.fetch()
             #Query end
 

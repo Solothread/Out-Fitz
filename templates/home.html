@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+    <script src="node_modules/aos/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,10 +20,15 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
+    <script>
+    AOS.init();
+    </script>
     <section id="leftbar" class="w3-card">
+      <div id="topcard" class="w3-card">
       <br>
       <h1 id="todaysDateText">{{month}}</h1>
       <p id="helloNameText">Hello, {{name}}!</p>
+      </div>
       <div id="signOutButton"><a href="{{log_url}}"><p> Sign Out </p></a></div>
       <form class="description" enctype="multipart/form-data" method="POST">
         <input type="file" name="myfile"/>
@@ -32,11 +39,13 @@
       <button type="submit"> Enter your outfit </button>
     </section>
     <section id="pictimeline"> <!-- Where all the pictures should display -->
-      <p class="timelinedate"> {{datepicker}} </p>
+      {% for n in outfits %}
+      <p class="timelinedate" data-aos="fade-down"> {{n.Date}} </p>
       <hr/>
       <div class="img_and_desc">
-      <img class="timelineimage" src="data:image/jpg;base64,{{img}}"></img>
-      <p class="timelinedesc"> {{outfitdescription}} </p>
+      <img class="timelineimage" data-aos="fade-right" src="data:image/jpg;base64,{{img}}"></img>
+      <p class="timelinedesc" data-aos="zoom-in"> {{n.Description}} </p>
       </div>
+      {% endfor %}
     </section>
 </html>

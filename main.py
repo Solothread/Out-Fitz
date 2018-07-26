@@ -53,9 +53,6 @@ class InfoPage(webapp2.RequestHandler):
             #Need to add filter
             query = Outfit.query()
             outfitslist = query.fetch()
-            outfits = {
-                'outfits': outfitslist
-            }
             #Query end
 
             jinja_values = {
@@ -63,9 +60,9 @@ class InfoPage(webapp2.RequestHandler):
                 'email_addr': user.email(),
                 'user_id': user.user_id(),
                 'log_url': users.create_logout_url('/'),
-                'month': datetime.datetime.now().strftime("%A, %B %d, %Y")
+                'month': datetime.datetime.now().strftime("%A, %B %d, %Y"),
+                'outfits': outfitslist
             }
-
             # if my_visitor.image:
             #     jinja_values["img"] = base64.b64encode(my_visitor.image)
 
@@ -92,7 +89,8 @@ class InfoPage(webapp2.RequestHandler):
         my_outfit.put()
 
         # self.redirect('/')
-
+        query = Outfit.query()
+        outfitslist = query.fetch()
         jinja_values = {
             'name': user.nickname(),
             'email_addr': user.email(),
@@ -101,7 +99,7 @@ class InfoPage(webapp2.RequestHandler):
             'month': datetime.datetime.now().strftime("%A, %B %d, %Y"),
             "outfitdescription": outfit_description,
             "datepicker": date_picker,
-            "link": pic_link,
+            'outfits': outfitslist
         }
 
         if visitorimage:

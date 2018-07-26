@@ -16,6 +16,9 @@ handlers:
 - url: /node_modules
   static_dir: node_modules
 
+- url: /materialize
+  static_dir: materialize
+
 - url: /.*
   script: main.app
 

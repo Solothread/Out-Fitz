@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
     <script src="node_modules/aos/dist/aos.js"></script>
+    <link rel="stylesheet" href="/materialize/css/materialize.css">
+    <script src="materialize/js/materialize.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -29,12 +32,21 @@
       <h1 id="todaysDateText">{{month}}</h1>
       <p id="helloNameText">Hello, {{name}}!</p>
       </div>
-      <div id="signOutButton"><a href="{{log_url}}"><p> Sign Out </p></a></div>
-      <form class="description" enctype="multipart/form-data" method="POST">
+      <a id="signOutButton" href="{{log_url}}" class="waves-effect waves-light btn"><i class="material-icons left">exit_to_app</i>Sign Out</a>
+      <div class="row">
+      <form class="description col s12" enctype="multipart/form-data" method="POST">
         <input type="file" name="myfile"/>
-        <div id="entryInfoContainer">
-          Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription"></input> <br>
-          Enter the date you wore this Outfit: <input type="text" id="datepicker" name="datepicker"></input>
+        <div class="row" id="entryInfoContainer">
+          <!-- Enter a Description of your Outfit: <input type="text" name="outfitdescription" id="outfitdescription"></input> <br> -->
+          <div class="input-field col s6">
+            <input id="outfitdescription" name="outfitdescription" type="text" class="validate">
+            <label for="outfitdescription">Outfit description</label>
+            <!-- Enter the date you wore this Outfit: <input type="text" id="datepicker" name="datepicker"></input> -->
+            <div class="input-field col s6">
+            <input placeholder="Date worn" id="datepicker" name="datepicker" type="text" class="validate">
+            <!-- <label for="datepicker">Date worn</label> -->
+          </div>
+        </div>
         </div>
       <button type="submit"> Enter your outfit </button>
     </section>
@@ -44,7 +56,7 @@
       <hr/>
       <div class="img_and_desc">
       <img class="timelineimage" data-aos="fade-right" src="data:image/jpg;base64,{{img}}"></img>
-      <p class="timelinedesc" data-aos="zoom-in"> {{n.Description}} </p>
+      <p class="timelinedesc" data-aos="fade-left"> {{n.Description}} </p>
       </div>
       {% endfor %}
     </section>

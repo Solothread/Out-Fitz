@@ -25,16 +25,21 @@ body {
   position: absolute;
   bottom: 16px;
   left: 16px;
+  background-color: #7e57c2;
 }
 
 #photoLinkContainer {
   padding-top: 30px;
-  padding-left: 16px;
+  padding-left: 26px;
 }
 
-#entryInfoContainer {
-  padding-top: 30px;
-  padding-left: 16px;
+#outfitdescription {
+  padding-left: 10px;
+  width: 200%;
+}
+#datepicker{
+  width: 200%;
+  padding-left: 20px;
 }
 
 #leftbar {
@@ -73,6 +78,7 @@ hr {
 
 .timelineimage {
   width: 40%;
+  height: 40%;
 }
 
 .img_and_desc {

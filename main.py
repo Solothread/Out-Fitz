@@ -25,6 +25,14 @@ def get_visitor():
     my_key = get_key(me)
     return my_key.get()
 
+class DeleteHandler(webapp2.RequestHandler):
+    def post(self):
+        #delete outfit object
+        print(self.request.get("data"))
+        #outfit = Outfit.query(Outfit.id == self.request.get("data")).get()
+        #print(outfit)
+        ndb.Key("Outfit", int(self.request.get("data"))).delete()
+
 class InfoPage(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -80,6 +88,7 @@ class InfoPage(webapp2.RequestHandler):
         outfit_description = self.request.get("outfitdescription")
         date_picker = self.request.get("datepicker")
         pic_link = self.request.get("link")
+        deleteButton = self.request.get("deleteButton")
 
         my_outfit = Outfit(
             Description = outfit_description,
@@ -110,4 +119,5 @@ class InfoPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', InfoPage),
+    ('/delete', DeleteHandler),
 ])

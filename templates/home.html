@@ -57,13 +57,17 @@
     </section>
     <section id="pictimeline">
       {% for n in outfits %}
-      <p class="timelinedate" data-aos='fade-down'> {{n.Date}} </p>
-      <hr/>
-      <div class="img_and_desc">
-      <img class="timelineimage" data-aos='fade-right' src='data:image/jpg;base64, {{n.Image}}'></img>
-      <p class="timelinedesc" data-aos='fade-left'> {{n.Description}} </p>
-      </div>
+      <span id="{{n.key.id()}}">
+        <p class="timelinedate" data-aos='fade-down'> {{n.Date}} </p>
+        <hr/>
+        <div class="img_and_desc">
+          <img class="timelineimage" data-aos='fade-right' src='data:image/jpg;base64, {{n.Image}}'></img>
+          <p class="timelinedesc" data-aos='fade-left'> {{n.Description}} </p>
+          <button class="deleteButton" name="{{n.key.id()}}" key="{{n.key}}">DELETE BUTTON</button>
+        </div>
+      </span>
       {% endfor %}
     </section>
     </body>
+    <script src="js/script.js"></script>
 </html>

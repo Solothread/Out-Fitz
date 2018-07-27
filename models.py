@@ -11,3 +11,4 @@ class Outfit(ndb.Model):
     Date = ndb.StringProperty(required=False)
     Image = ndb.TextProperty()
     User_ID = ndb.StringProperty()
+    deleteButton = ndb.BooleanProperty(required=False)

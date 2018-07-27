@@ -106,6 +106,15 @@ hr {
   color: #444444;
 }
 
+.deleteButton{
+  position:absolute;
+  bottom:15px;
+  right:20px;
+}
+.img_and_desc{
+  position:relative;
+}
+
 #choosefile {
   padding-bottom: 20px;
   background-color: #7e57c2;
